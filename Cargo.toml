@@ -1,0 +1,12 @@
+[package]
+name = "harper-ffi"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "harper_ffi"
+crate-type = ["staticlib", "cdylib"]  # staticlib for iOS, cdylib for macOS
+
+[dependencies]
+harper-core = "0.45.0"  # Latest version as of now
+libc = "0.2"  # For C types in FFI

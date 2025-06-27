@@ -1,0 +1,106 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+xcuserdata/
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcuserdata/
+
+# Swift Package Manager
+.build/
+Packages/
+Package.pins
+Package.resolved
+*.xcodeproj
+.swiftpm
+
+# Rust
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# Build directories
+derived_data/
+.build/
+.build/
+
+# Code coverage
+generated/
+*.profdata
+
+# LLVM and Clang
+*.o
+*.d
+*.a
+*.dylib
+*.so
+*.dSYM
+
+# Debug information
+*.dSYM.zip
+*.dSYM
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Vim swap files
+*.swp
+
+# Local configuration files
+.netrc
+local.properties
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Ignore SwiftLint cache
+.swiftlintcache
+
+# Ignore SwiftPM user settings
+.swiftpm/config/registries.json
+
+# Ignore Xcode user settings
+**/xcuserdata/
+*.xcuserstate
+*.xcuserdata
+*.xcodeproject
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcworkspace/contents.xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# Ignore Rust build artifacts
+**/target/
+
+# Ignore Cargo.lock for libraries (but include it for applications)
+# Uncomment the following line if this is an application
+# !Cargo.lock
+
+# Ignore local IDE settings
+.idea/
+.vscode/
+*.code-workspace
+
+# Ignore local environment files
+.env.local
+.env.*.local
+
+# Ignore local development certificates
+*.p12
+*.cer
+*.mobileprovision
+
+# Ignore local database files
+*.db
+*.sqlite
+*.sqlite3

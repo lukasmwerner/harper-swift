@@ -148,10 +148,10 @@ for (i, lint) in lints.enumerated() {
 This project demonstrates a complete Rust -> C -> Swift FFI bridge:
 
 ```
-┌───────────────────┐    ┌────────────────┐    ┌───────────────────┐
+┌─────────────────┐    ┌──────────────┐    ┌─────────────────┐
 │   Swift API     │<-->│   C FFI      │<-->│   Rust Core     │
 │  (HarperSwift)  │    │  (harper.h)  │    │  (harper-core)  │
-└───────────────────┘    └────────────────┘    └───────────────────┘
+└─────────────────┘    └──────────────┘    └─────────────────┘
 ```
 
 ### Layer Breakdown

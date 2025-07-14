@@ -148,10 +148,10 @@ for (i, lint) in lints.enumerated() {
 This project demonstrates a complete Rust -> C -> Swift FFI bridge:
 
 ```
-┌─────────────────┐    ┌──────────────┐    ┌─────────────────┐
+┌-----------------┐    ┌--------------┐    ┌-----------------┐
 │   Swift API     │<-->│   C FFI      │<-->│   Rust Core     │
 │  (HarperSwift)  │    │  (harper.h)  │    │  (harper-core)  │
-└─────────────────┘    └──────────────┘    └─────────────────┘
+└-----------------┘    └--------------┘    └-----------------┘
 ```
 
 ### Layer Breakdown
@@ -201,18 +201,18 @@ The API uses Swift's optional types for safe error handling:
 
 ```
 harper-swift/
-├── src/
-│   └── lib.rs              # Rust FFI implementation
-├── Sources/
-│   ├── CHarper/
-│   │   └── harper.h        # C header declarations
-│   ├── HarperSwift/
-│   │   └── Harper.swift    # Swift library implementation
-│   └── HarperCLI/
-│       └── main.swift      # Command-line interface
-├── Package.swift           # Swift package configuration
-├── Cargo.toml             # Rust dependencies
-└── README.md              # This file
+├-- src/
+│   └-- lib.rs              # Rust FFI implementation
+├-- Sources/
+│   ├-- CHarper/
+│   │   └-- harper.h        # C header declarations
+│   ├-- HarperSwift/
+│   │   └-- Harper.swift    # Swift library implementation
+│   └-- HarperCLI/
+│       └-- main.swift      # Command-line interface
+├-- Package.swift           # Swift package configuration
+├-- Cargo.toml             # Rust dependencies
+└-- README.md              # This file
 ```
 
 ### Building and Testing

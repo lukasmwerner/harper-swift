@@ -263,6 +263,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ## Related Projects
 
 - [Harper](https://github.com/Automattic/harper) - Main Harper repository (contains harper-core)
+- [harper-c](https://github.com/hippietrail/harper-c) - Minimal C FFI example bindings for Harper
+- [harper-py](https://github.com/hippietrail/harper-py) - Minimal Python FFI example bindings for Harper
 - [harper-core](https://crates.io/crates/harper-core) - Core Rust library (available on crates.io)
 - [harper-cli](https://github.com/Automattic/harper/tree/master/harper-cli) - Command-line interface
 - [harper-ls](https://github.com/Automattic/harper/tree/master/harper-ls) - Language server 

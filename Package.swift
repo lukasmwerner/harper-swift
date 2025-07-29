@@ -23,13 +23,10 @@ let package = Package(
             pkgConfig: nil,
             providers: []
         ),
+        .binaryTarget(name: "HarperFFI", path: "./HarperFFI.xcframework"),
         .target(
             name: "HarperSwift",
-            dependencies: ["CHarper"],
-            linkerSettings: [
-                .unsafeFlags(["-L", "target/release"]),
-                .linkedLibrary("harper_ffi")
-            ]
+            dependencies: ["CHarper", "HarperFFI"],
         ),
         .executableTarget(
             name: "HarperCLI",

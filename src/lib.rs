@@ -1,6 +1,6 @@
 use harper_core::core_version;
+use harper_core::linting::{Lint, LintGroup, Linter};
 use harper_core::Document;
-use harper_core::linting::{Lint, Linter, LintGroup};
 use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 use std::ptr;
@@ -37,7 +37,7 @@ pub extern "C" fn harper_create_document(text: *const c_char) -> *mut Document {
         Ok(s) => s,
         Err(_) => return ptr::null_mut(),
     };
-    
+
     let doc = Document::new_plain_english_curated(text_str);
     Box::into_raw(Box::new(doc))
 }
@@ -63,7 +63,7 @@ pub extern "C" fn harper_get_document_text(doc: *const Document) -> *mut c_char 
 
     let doc = unsafe { &*doc };
     let text = doc.get_full_string();
-    
+
     match CString::new(text) {
         Ok(cstr) => cstr.into_raw(),
         Err(_) => ptr::null_mut(),
@@ -85,7 +85,7 @@ pub extern "C" fn harper_create_lint_group() -> *mut LintGroup {
     let dictionary = harper_core::FstDictionary::curated();
     let lint_group = harper_core::linting::LintGroup::new_curated(
         std::sync::Arc::new(dictionary),
-        harper_core::Dialect::Australian,
+        harper_core::Dialect::American,
     );
     Box::into_raw(Box::new(lint_group))
 }
@@ -145,7 +145,9 @@ pub extern "C" fn harper_free_lints(lints: *mut *mut Lint, count: i32) {
 #[no_mangle]
 pub extern "C" fn harper_free_lint(lint: *mut Lint) {
     if !lint.is_null() {
-        unsafe { let _ = Box::from_raw(lint); }
+        unsafe {
+            let _ = Box::from_raw(lint);
+        }
     }
 }
 
@@ -163,7 +165,11 @@ pub extern "C" fn harper_get_lint_message(lint: *const Lint) -> *mut c_char {
 }
 
 #[no_mangle]
-pub extern "C" fn harper_get_lint_start_and_end(lint: *const Lint, start: *mut i64, end: *mut i64) -> bool {
+pub extern "C" fn harper_get_lint_start_and_end(
+    lint: *const Lint,
+    start: *mut i64,
+    end: *mut i64,
+) -> bool {
     if lint.is_null() {
         return false;
     }
@@ -200,3 +206,4 @@ pub extern "C" fn harper_get_lint_suggestion_text(lint: *const Lint, index: i32)
         Err(_) => std::ptr::null_mut(),
     }
 }
+

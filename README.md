@@ -27,15 +27,20 @@ This project provides minimal Swift bindings for Harper, a grammar and style che
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/harper-swift.git
+git clone https://github.com/lukasmwerner/harper-swift.git
 cd harper-swift
 
-# Build the Rust library
-cargo build --release
+# This will build the rust library (for x86_64 and aarch64), then it will make a xcframweork file for the swift build system
+./build-and-package.sh
 
 # Build and run the Swift package
 swift run harper "Your text here"
 ```
+
+#### Importing into XCode
+
+Add a new dependency under `File > Add Package Dependencies`. Then press `Add Local` and point to the location of this repo on you local drive.
+
 
 ### Example Usage
 

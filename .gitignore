@@ -104,3 +104,5 @@ fastlane/test_output
 *.db
 *.sqlite
 *.sqlite3
+
+HarperFFI.xcframework/
